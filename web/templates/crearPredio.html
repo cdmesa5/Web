@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Client</title>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+        integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css"
+        integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+        integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+        crossorigin="anonymous"></script>
+</head>
+
+<body class="container">
+    <h1 class="form-group text-center">Predio</h1>
+    <form action="/guardarPredio" method="POST" data-toggle="validator" class="jumbotron container" name="formulario" style="width: 60%;">
+        <div class="form-group">
+            <div class="col">
+                <label>Codigo</label>
+                <input type="number" name="codigo" class="form-control" required>
+            </div>
+            <div class="col">
+                <label>Latitud</label>
+                <input type="text" name="latitud" class="form-control" required>
+            </div>
+            <div class="col">
+                <label>Longitud</label>
+                <input type="text" name="longitud" class="form-control" required>
+            </div>
+            <div class="col">
+                <label>Terreno</label>
+                <select id="inputState" class="form-control" name="terreno" required>
+                    <option selected></option>
+                    {% for op in listaTipos %}
+                        <option> {{op}} </option>
+                    {% endfor %}
+                </select>
+            </div>
+            <div class="col">
+                <label>Area</label>
+                <input type="number" name="area" class="form-control" min="0" required>
+            </div>
+            <div class="col">
+                <label>Imagen</label>
+                <input type="text" name="imagen" class="form-control" required>
+            </div>
+        </div>
+        <!--Boton para validar campos-->
+        <div class="text-center">
+            <input type="submit" value="Guardar" class="btn btn-success" />
+        </div>
+        </div>
+    </form>
+</body>
+
+</html >
