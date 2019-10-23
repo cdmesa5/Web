@@ -1,0 +1,4 @@
+Flask == 1.1.1
+flask-cors==3.0.8
+mysql-connerctor==2.2.9
+requests=2.22.0
