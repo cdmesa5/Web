@@ -11,7 +11,7 @@ import requests
 app = Flask(__name__, template_folder="templates")
 CORS(app)
 
-terrenos_list = ['Planicie', 'Ladera', 'Cenagoso', ' Desértico']
+terrenos_list = ['Planicie', 'Ladera', 'Cenagoso', ' Desértico']
 
 predio_list = [
     {"codigo" :1698457, "latitud" :"3867 22°", "longitud" :"2563 15°", "terreno" : "Planicie", "area" :1958.00},
@@ -35,5 +35,3 @@ def guardarPredio():
     predio['codigo'] = int(predio['codigo'])
     requests.post('http://localhost:5000/predios', json=predio)
     return(listarPredio())
-
-app.run(port = 8000, debug = True)
